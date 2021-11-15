@@ -9,8 +9,8 @@ int* randArray = new int[10];
 int lastCubeNum = 0;
 
 //Функции
-void fillArray(int* cubeArray, int length);
-void getLastCubeNum(int* cubeArray, int length);
+void fillArray(int* randArray, int length);
+void getLastCubeNum(int* randArray, int length);
 void clearArray();
 
 
@@ -35,20 +35,20 @@ int main()
 }
 
 //такое же заполнение массива, как мы писали в классе
-void fillArray(int* cubeArray, int length)
+void fillArray(int* randArray, int length)
 {
     cout << "Введите числа в массив: " << endl;
     for (int i = 0; i < length; i++)
     {
-        cin >> cubeArray[i];
+        cin >> randArray[i];
     }
 }
 
-void getLastCubeNum(int* cubeArray, int length)
+void getLastCubeNum(int* randArray, int length)
 {
     for (int l = 0; l < length; l++)
     {
-        if (cubeArray[l] == pow(cubeArray[l - 1], 3)) //проверка на куб предыдущего числа.
+        if (randArray[l] == pow(randArray[l - 1], 3)) //проверка на куб предыдущего числа.
         {
             lastCubeNum = l;
         }
