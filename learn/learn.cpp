@@ -3,7 +3,7 @@
 using namespace std;
 
 //Обьявление переменных
-int* randArray = new int[20];
+int* randArray = new int[10];
 int lastCubeNum = 0;
 
 //Функции
@@ -36,7 +36,7 @@ int main()
 //такое же заполнение массива, как мы писали в классе
 void fillArray(int* cubeArray, int length)
 {
-    cout << "Введите массив: " << endl;
+    cout << "Введите числа в массив: " << endl;
     for (int i = 0; i < length; i++)
     {
         cin >> cubeArray[i];
