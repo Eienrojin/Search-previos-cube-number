@@ -1,4 +1,6 @@
-﻿#include <iostream>
+//16. найти номер последнего элемента, который совпадает с кубом предыдущего числа
+
+#include <iostream>
 #include <cmath>
 using namespace std;
 
@@ -7,8 +9,8 @@ int* randArray = new int[10];
 int lastCubeNum = 0;
 
 //Функции
-void fillArray(int* randArray, int length);
-void getLastCubeNum(int* randArray, int length);
+void fillArray(int* cubeArray, int length);
+void getLastCubeNum(int* cubeArray, int length);
 void clearArray();
 
 
@@ -19,6 +21,7 @@ int main()
     fillArray(randArray, 10);
     getLastCubeNum(randArray, 10);
 
+    //Соответствуют ли введенные числа задаче или нет
     if (lastCubeNum == 0)
     {
         cout << "Нет чисел, соответствующих условию задачи. Попробуйте снова." << endl;
@@ -32,20 +35,20 @@ int main()
 }
 
 //такое же заполнение массива, как мы писали в классе
-void fillArray(int* randArray, int length)
+void fillArray(int* cubeArray, int length)
 {
     cout << "Введите числа в массив: " << endl;
     for (int i = 0; i < length; i++)
     {
-        cin >> randArray[i];
+        cin >> cubeArray[i];
     }
 }
 
-void getLastCubeNum(int* randArray, int length)
+void getLastCubeNum(int* cubeArray, int length)
 {
     for (int l = 0; l < length; l++)
     {
-        if (randArray[l] == pow(randArray[l - 1], 3)) //проверка на куб предыдущего числа.
+        if (cubeArray[l] == pow(cubeArray[l - 1], 3)) //проверка на куб предыдущего числа.
         {
             lastCubeNum = l;
         }
@@ -56,7 +59,5 @@ void getLastCubeNum(int* randArray, int length)
 void clearArray()
 {
     delete[] randArray;
-
     cout << "Массив очищен!" << endl;
 }
-
